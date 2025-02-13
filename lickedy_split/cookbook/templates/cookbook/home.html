@@ -1,0 +1,22 @@
+{% extends 'cookbook/base.html' %}  <!-- Update the path if needed -->
+{% load static %}
+
+{% block title %}
+    <title>Home - Cookbook</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'cookbook/home.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1>Discover Recipes with What You Have!</h1>
+        <p>Not sure what to cook? Enter your ingredients, and we’ll find the perfect recipes for you! No wasted food, just delicious meals.</p>
+
+        <div>
+            <button type="button">Explore Now</button>
+            <button type="button">Log In</button>
+        </div>
+    </div>
+{% endblock %}
