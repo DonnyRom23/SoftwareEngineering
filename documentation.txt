@@ -1,0 +1,37 @@
+Virtual environment
+-   Need to have python and pip installed
+-   In you primaryf_ile type into the command line
+    	C:\dir\myfile> py -m venv env_site
+    	then
+    	.\env_site\Scripts\Activate.ps1
+
+Initial setup
+- 	to install django
+	pip install django
+-   setup of django
+	django-admin startproject project
+-   start server, in project file
+    add new app in the settings installed apps
+	py .\manage.py runserver
+-   create app
+    py .\manage.py startapp cookbook
+
+
+Set up html files without functionality 
+-   put html files in project/app/templates/app
+-   create urls.py in the app dir 
+    - add the urls for each html
+    - add the path of new urls.py in project/project/urls
+-   In views add in basic calls to the html files
+
+Databases mysql
+-   Create an empty database in mysql using command line
+-   in settings change the database engine to .mysql
+    - add in the name, user, pass, host, and port of database
+-   Create the new tables/modles in models.py
+-   Update the database 
+    - py ./manage makemigrations
+    - py ./manage migrate
+
+
+-   Create views to use the databases and add functionality to the html pages
