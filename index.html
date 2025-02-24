@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linkedin</title>
+  <title>Lickty-Split</title>
   <link rel="stylesheet" href="style.css">
+  <script src="profile.js" defer></script>
 </head>
 <body>
 
@@ -12,403 +13,111 @@
   <div class="navbar-left">
     <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
     <div class="search-box">
-      <img src="images/search.png" >
+      <ion-icon name="search-outline"></ion-icon>
       <input type="text" placeholder="Search for anything">
     </div>
   </div>
-  <div class="navbar-center">
-    <ul>
-      <li><a href="#" class="active-link"><img src="images/home.png" alt="home"> <span>Home</span></a></li>
-      <li><a href="#"><img src="images/network.png" alt="network"> <span>My Network</span></a></li>
-      <li><a href="#"><img src="images/jobs.png" alt="jobs"> <span>Jobs</span></a></li>
-      <li><a href="#"><img src="images/message.png" alt="message"> <span>Messaging</span></a></li>
-      <li><a href="#"><img src="images/notification.png" alt="notification"> <span>Notifications</span></a></li>
-    </ul>
-  </div>
   <div class="navbar-right">
     <div class="online">
-      <img src="images/user-1.png" class="nav-profile-img" onclick="toggleMenu()">
+      <ion-icon name="person-outline"></ion-icon>
     </div>
   </div>
-  <!----Dropdown menu-->
-  <div class="profile-menu-wrap" id="profileMenu">
-    <div class="profile-menu">
-      <div class="user-info">
-        <img src="images/user-1.png">
-        <div>
-          <h3>John Doe</h3>
-          <a href="#">See your profile</a>
-        </div>
-      </div>
-      <hr>
-      <a href="#" class="profile-menu-link">
-        <img src="images/feedback.png">
-        <p>Give Feedback</p>
-        <span>></span>
-      </a>
-      <a href="#" class="profile-menu-link">
-        <img src="images/setting.png">
-        <p>Settings & Privacy</p>
-        <span>></span>
-      </a>
-      <a href="#" class="profile-menu-link">
-        <img src="images/help.png">
-        <p>Help & Support</p>
-        <span>></span>
-      </a>
-      <a href="#" class="profile-menu-link">
-        <img src="images/display.png">
-        <p>Display & Accessibility</p>
-        <span>></span>
-      </a>
-      <a href="#" class="profile-menu-link">
-        <img src="images/logout.png">
-        <p>Logout</p>
-        <span>></span>
-      </a>
-
-
-    </div>
-  </div>
-
-
-
-
 </nav>
 
 
 <div class="container">
-  <div class="left-sidebar">
-    <div class="sidebar-profile-box">
-      <img src="images/cover-pic.png" width="100%">
-      <div class="sidebar-profile-info">
-        <img src="images/user-1.png">
-        <h1>John Doe</h1>
-        <h3>Data Analyst at IBM</h3>
-        <ul>
-          <li>Your profile views <span>24</span></li>
-          <li>Your post views <span>128</span></li>
-          <li>Your Connections<span>108</span></li>
-        </ul>
+  <div class="top-box">
+    <div class="profile-box">
+      <!-- Profile Picture Section -->
+      <div class="profile-picture">
+        <img src="images/default-profile.png" alt="Profile Picture" id="profile-pic">
+        <label for="upload-pic" class="upload-label">
+          <ion-icon name="camera-outline"></ion-icon>
+        </label>
+        <input type="file" id="upload-pic" accept="image/*" style="display: none;">
       </div>
-      <div class="sidebar-profile-link">
-        <a href="#"><img src="images/items.png">My Items</a>
-        <a href="#"><img src="images/premium.png">Try Premium</a>
+      <!-- Profile Info Section -->
+      <div class="profile-info">
+        <h1>Shanaz Munni</h1>
+        <h3>Little notes here</h3>
+        <p>About ME!!!</p>
       </div>
-    </div>
-
-    <div class="sidebar-activity" id="sidebarActivity">
-      <a href="#" onclick="showContent('favorites')">Favorites</a>
-      <a href="#" onclick="showContent('meal-plan')">Meal Plan</a>
-      <a href="#" onclick="showContent('add-recipe')">Add Recipe</a>
-      <a href="#" onclick="showContent('recent-recipes')">Recent Recipes</a>
-      <a href="#" onclick="showContent('shopping-list')">Shopping List</a>
-      <a href="#">Discover More</a>
-    </div>
-  </div>
-  <p id="showMoreLink" onclick="toggleActivity()">Show more <b>+</b></p>
-
-</div>
-<div class="main-content">
-  <div class="create-post">
-    <div class="create-post-input">
-      <img src="images/user-1.png">
-      <textarea rows="2" placeholder="Write Something"></textarea>
-    </div>
-    <div class="create-post-links">
-      <li><img src="images/photo.png">Photo</li>
-      <li><img src="images/video.png">Video</li>
-      <li><img src="images/event.png">Event</li>
-      <li>Post</li>
-    </div>
-  </div>
-  <div class="sort-by">
-    <hr>
-    <p>Sort by : <span>top <img src="images/down-arrow.png" ></span> </p>
-
-  </div>
-  <div class="post">
-    <div class="post-author">
-      <img src="images/user-3.png">
-      <div>
-        <h1>Bejamin Leo</h1>
-        <small>Founder and CEO at Giva | Angel Investor</small>
-        <small>2 hours ago </small>
-      </div>
-    </div>
-    <p>The sucess of every website depends on Search engine optimisation
-      and digital marketing strategy. If you are not in the first page of all major search engines
-      then you are ahead among your competitors.
-    </p>
-    <img src="images/post-image-1.png"width="100%">
-
-
-
-    <div class="post-stats">
-      <div>
-        <img src="images/thumbsup.png" >
-        <img src="images/love.png">
-        <img src="images/clap.png">
-        <span class="liked-users">Adam Doe and 89 others</span>
-      </div>
-      <div>
-        <span>22 comments &middot; 40 shares</span>
-      </div>
-    </div>
-    <div class="post-activity">
-      <div>
-        <img src="images/user-1.png" class="post-activity-user-icon">
-        <img src="images/down-arrow.png" class="post-activity-arrow-icon">
-
-      </div>
-      <div class="post-activity-link">
-        <img src="images/like.png">
-        <span>Like</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/comment.png">
-        <span>Comment</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/share.png">
-        <span>Share</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/send.png">
-        <span>Send</span>
+      <!-- Add Recipe Button -->
+      <div class="profile-link">
+        <a href="add-recipe.html" class="add-recipe-btn">
+          <ion-icon name="add-outline"></ion-icon>
+          Add Recipe
+        </a>
       </div>
     </div>
   </div>
 
-
-
-  <div class="post">
-    <div class="post-author">
-      <img src="images/user-4.png">
-      <div>
-        <h1>Claire Smith</h1>
-        <small>SDE at Swiggy | Solopreneur</small>
-        <small>2 hours ago </small>
+  <!--My Recipes-->
+  <div class="expandable">
+    <div class="expandable_title_bar">
+      <span class="expandable_title">My Recipes</span>
+      <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
+    </div>
+    <div class="expandable_content_wrapper">
+      <div class="my_recipes_content">
+        <p>Your own recipes here. </p>
       </div>
     </div>
-    <p>The sucess of every website depends on Search engine optimisation
-      and digital marketing strategy. If you are not in the first page of all major search engines
-      then you are ahead among your competitors.
-    </p>
-    <img src="images/post-image-2.png"width="100%">
-
-
-
-    <div class="post-stats">
-      <div>
-        <img src="images/thumbsup.png" >
-        <img src="images/love.png">
-        <img src="images/clap.png">
-        <span class="liked-users">Adam Doe and 89 others</span>
-      </div>
-      <div>
-        <span>22 comments &middot; 40 shares</span>
-      </div>
+  </div>
+  <!--Favorite Recipes-->
+  <div class="expandable">
+    <div class="expandable_title_bar">
+      <span class="expandable_title"> Favorite Recipes</span>
+      <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
     </div>
-    <div class="post-activity">
-      <div>
-        <img src="images/user-1.png" class="post-activity-user-icon">
-        <img src="images/down-arrow.png" class="post-activity-arrow-icon">
-
-      </div>
-      <div class="post-activity-link">
-        <img src="images/like.png">
-        <span>Like</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/comment.png">
-        <span>Comment</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/share.png">
-        <span>Share</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/send.png">
-        <span>Send</span>
+    <div class="expandable_content_wrapper">
+      <div class="my_recipes_content">
+        <p>Your favorite recipes here. </p>
       </div>
     </div>
   </div>
 
-
-  <div class="post">
-    <div class="post-author">
-      <img src="images/user-3.png">
-      <div>
-        <h1>Bejamin Leo</h1>
-        <small>Founder and CEO at Giva | Angel Investor</small>
-        <small>2 hours ago </small>
-      </div>
+  <!-- Recent Recipes -->
+  <div class="expandable">
+    <div class="expandable_title_bar">
+      <span class="expandable_title">Recent Recipes</span>
+      <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
     </div>
-    <p>The sucess of every website depends on Search engine optimisation
-      and digital marketing strategy. If you are not in the first page of all major search engines
-      then you are ahead among your competitors.
-    </p>
-    <img src="images/post-image-3.png"width="100%">
-
-
-
-    <div class="post-stats">
-      <div>
-        <img src="images/thumbsup.png" >
-        <img src="images/love.png">
-        <img src="images/clap.png">
-        <span class="liked-users">Adam Doe and 89 others</span>
-      </div>
-      <div>
-        <span>22 comments &middot; 40 shares</span>
-      </div>
-    </div>
-    <div class="post-activity">
-      <div>
-        <img src="images/user-1.png" class="post-activity-user-icon">
-        <img src="images/down-arrow.png" class="post-activity-arrow-icon">
-
-      </div>
-      <div class="post-activity-link">
-        <img src="images/like.png">
-        <span>Like</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/comment.png">
-        <span>Comment</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/share.png">
-        <span>Share</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/send.png">
-        <span>Send</span>
+    <div class="expandable_content_wrapper">
+      <div class="my_recipes_content">
+        <p>View your recently viewed recipes.</p>
       </div>
     </div>
   </div>
 
-
-  <div class="post">
-    <div class="post-author">
-      <img src="images/user-3.png">
-      <div>
-        <h1>Bejamin Leo</h1>
-        <small>Founder and CEO at Giva | Angel Investor</small>
-        <small>2 hours ago </small>
-      </div>
+  <!-- Meal Plan -->
+  <div class="expandable">
+    <div class="expandable_title_bar">
+      <span class="expandable_title">Meal Plan</span>
+      <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
     </div>
-    <p>The sucess of every website depends on Search engine optimisation
-      and digital marketing strategy. If you are not in the first page of all major search engines
-      then you are ahead among your competitors.
-    </p>
-    <img src="images/post-image-4.png"width="100%">
-
-
-
-    <div class="post-stats">
-      <div>
-        <img src="images/thumbsup.png" >
-        <img src="images/love.png">
-        <img src="images/clap.png">
-        <span class="liked-users">Adam Doe and 89 others</span>
-      </div>
-      <div>
-        <span>22 comments &middot; 40 shares</span>
-      </div>
-    </div>
-    <div class="post-activity">
-      <div>
-        <img src="images/user-1.png" class="post-activity-user-icon">
-        <img src="images/down-arrow.png" class="post-activity-arrow-icon">
-
-      </div>
-      <div class="post-activity-link">
-        <img src="images/like.png">
-        <span>Like</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/comment.png">
-        <span>Comment</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/share.png">
-        <span>Share</span>
-      </div>
-      <div class="post-activity-link">
-        <img src="images/send.png">
-        <span>Send</span>
+    <div class="expandable_content_wrapper">
+      <div class="my_recipes_content">
+        <p>Plan your meals for the week with our suggested recipes.</p>
       </div>
     </div>
   </div>
 
-</div>
-<div class="right-sidebar">
-  <div class="sidebar-news">
-    <img src="images/more.png" class="info-icon">
-    <h3>Recent Recipes</h3>
-
-    <a href="#">strawberry slushi </a>
-    <span>1d ago &middot; 10,934 readers</span>
-
-
-    <a href="#" class="read-more-link">Read More</a>
-
-
-  </div>
-
-  <div class="sidebar-ad">
-    <small>Ad &middot; &middot; &middot;</small>
-    <p>Master Web Development</p>
-    <div>
-      <img src="images/user-1.png">
-      <img src="images/mi-logo.png">
-
+  <!-- Shopping List -->
+  <div class="expandable">
+    <div class="expandable_title_bar">
+      <span class="expandable_title">Shopping List</span>
+      <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
     </div>
-    <b>Brand and Demand in Xiaomi</b>
-    <a href="#" class="ad-link">Learn More</a>
-  </div>
-
-
-  <div class="sidebar-useful-links">
-    <a href="#">About</a>
-    <a href="#">Help Center</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Advertising</a>
-    <a href="#">Get the App</a>
-    <a href="#">More</a>
-
-
-    <div class="copyright-msg">
-      <img src="images/logo.png">
-      <p>Linkedin &#169; 2022. All Rights Reserved</p>
+    <div class="expandable_content_wrapper">
+      <div class="my_recipes_content">
+        <p>Keep track of ingredients you need to buy.</p>
+      </div>
     </div>
   </div>
 </div>
-</div>
 
-<script>
-  let profileMenu = document.getElementById("profileMenu");
-
-  function toggleMenu(){
-      profileMenu.classList.toggle("open-menu");
-  }
-
-  let sideActivity = document.getElementById("sidebarActivity");
-  let moreLink = document.getElementById("showMoreLink");
-
-  function toggleActivity(){
-      sideActivity.classList.toggle("open-activity");
-      if (sideActivity.classList.contains("open-activity")) {
-          moreLink.innerHTML="Show less <b>-</b>";
-
-      }
-      else{
-          moreLink.innerHTML="Show More <b>+</b>";
-      }
-  }
-
-</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
