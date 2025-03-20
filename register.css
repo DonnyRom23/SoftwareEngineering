@@ -18,7 +18,7 @@
     padding: 50px 0;
     display: flex;
     align-items: center;
-    justify-content: space- between;
+    justify-content: space-between;
 }
 .logo{
     width: 120px;
@@ -79,6 +79,7 @@
     width: 300px;
     padding: 40px;
 }
+
 .wrapper .icon-close{
     position:absolute;
     top:0;
@@ -157,10 +158,10 @@ justify-content: space-between;
 }
 .remember-forgot label input{
 accent-color: #fff;
-margin-right: 3px;
 }
 .remember-forgot a{
 color: #fff;
+margin-right: 90px;
 text-decoration: none;
 }
 .remember-forgot a:hover{
@@ -198,22 +199,89 @@ font-weight: 600;
 text-decoration: underline;
 }
 
-.socialIcons{
-    display: flex;
-    justify-content: center;
+
+/* Modal Container */
+.terms-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;  /* Adjusts modal width relative to the wrapper */
+  max-width: 600px; /* Ensures it's not too large */
+  background: #000;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255);
+  padding: 20px;
+  max-height: 50vh; /* Controls height */
+  overflow-y: auto; /* Enables scrolling */
 }
-.socialIcons a{
-    text-decoration: none;
-    padding: 10px;
-    background-color: white; /* Icon background color */
-    margin: 10px;
-    border-radius: 50%;/* Circular icons */
+
+/* Modal Header */
+.terms-modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
 }
-.socialIcons a:hover{
-     background-color: #111;/* Change background on hover */
-     transition: 0.5s;/* Smooth transition */
- }
-.socialIcons a:hover i{
-    color: white;/* Change icon color on hover */
-    transition: 0.5s;
+
+.terms-modal .modal-header h2 {
+  font-size: 20px;
+  margin: 0;
+  color: #fff;
 }
+
+/* Close Button */
+.terms-modal .close-btn {
+  background: #fff;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #000;
+  border-radius: 60%
+}
+
+/* Modal Content */
+.terms-modal .modal-content {
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  max-height: 50vh; /* Limits content height */
+  overflow-y: auto; /* Allows scrolling */
+}
+
+/* Agree Button */
+.terms-modal .agree-btn {
+  display: block;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.terms-modal .agree-btn:hover {
+  background: #0056b3;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+

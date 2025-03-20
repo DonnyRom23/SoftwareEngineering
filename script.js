@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     const wrapper = document.querySelector('.wrapper');
-    const loginLink = document.querySelector('.login-link');
-    const registerLink = document.querySelector('.register-link');
-    const forgotPasswordLink = document.querySelector('.forgot-password-link');
     const loginForm = document.querySelector('.form-box.login');
     const registerForm = document.querySelector('.form-box.register');
     const forgotPasswordForm = document.querySelector('.form-box.forgot-password');
@@ -16,41 +13,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (registerLink) {
-        registerLink.addEventListener('click', () => {
-            // Show the register form and hide others
-            loginForm.style.transform = 'translateX(500px)';
-            forgotPasswordForm.style.transform = 'translateX(500px)';
-            registerForm.style.transform = 'translateX(0)';
-        });
-    }
-
-    if (loginLink) {
-        loginLink.addEventListener('click', () => {
-            // Show the login form and hide others
-            loginForm.style.transform = 'translateX(0)';
-            registerForm.style.transform = 'translateX(500px)';
-            forgotPasswordForm.style.transform = 'translateX(500px)';
-        });
-    }
-
-    if (forgotPasswordLink) {
-        forgotPasswordLink.addEventListener('click', () => {
-            // Show the forgot password form and hide others
-            loginForm.style.transform = 'translateX(500px)';
-            registerForm.style.transform = 'translateX(500px)';
-            forgotPasswordForm.style.transform = 'translateX(0)';
-        });
-    }
-
-    // Add event listener for login link in the forgot password form
-    const loginLinkInForgotPassword = document.querySelector('.forgot-password .login-link');
-    if (loginLinkInForgotPassword) {
-        loginLinkInForgotPassword.addEventListener('click', () => {
-            // Show the login form and hide others
-            loginForm.style.transform = 'translateX(0)';
-            registerForm.style.transform = 'translateX(500px)';
-            forgotPasswordForm.style.transform = 'translateX(500px)';
-        });
-    }
 });
+// Open the modal when the "I agree to the terms & conditions" link is clicked
+document.getElementById('open-terms').addEventListener('click', function(event) {
+  event.preventDefault();  // Prevent the default link behavior
+  const modal = document.getElementById('terms-modal');
+  modal.style.display = 'block';
+});
+
+// Close the modal when the "X" is clicked
+function closeModal() {
+  const modal = document.getElementById('terms-modal');
+  modal.style.display = 'none';
+}
+
+// Function to handle "I Agree" button click
+function acceptTerms() {
+  const modal = document.getElementById('terms-modal');
+  modal.style.display = 'none';
+  // Optionally, mark the checkbox as checked
+  document.getElementById('terms-checkbox').checked = true;
+}
