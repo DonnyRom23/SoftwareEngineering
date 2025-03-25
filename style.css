@@ -43,6 +43,7 @@ a {
 
 .online {
     position: relative;
+    background: #fff;
 }
 
 .online::after {
@@ -258,6 +259,116 @@ a {
     transition: grid-template-rows 0.3s ease-out;
 }
 
+.favorite_recipes_content {
+    padding: 0 var(--xy-padding);
+    border: 1px solid #dddddd;
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: hidden;
+}
+.recent_recipes_content {
+    padding: 0 var(--xy-padding);
+    border: 1px solid #dddddd;
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: hidden;
+}
+
+.meal_plan_content {
+    padding: 0 var(--xy-padding);
+    border: 1px solid #dddddd;
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: hidden;
+}
+.shopping_list_content {
+    padding: 10 var(--xy-padding);
+    border: 1px solid #dddddd;
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: hidden;
+}
+
+.shopping_list {
+  list-style: none;
+  padding: 0;
+}
+
+.shopping_list li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.shopping_checkbox {
+  margin-right: 10px;
+}
+
+.shopping_label {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.notes {
+  font-size: 12px;
+  color: #777;
+}
+
+.add_item_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #045be6;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.add_item_button:hover {
+  background: #0342a8;;
+}
+/* Hover effects for list items */
+.shopping_list li:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+.edit-button, .delete-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 5px;
+}
+.edit-button:hover, .delete-button:hover {
+  color: #0056b3;
+}
+
+.edit-button i, .delete-button i {
+  font-size: 18px;
+}
+/* Sorting options styling */
+.sorting-options {
+  /*display: flex;*/
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#sort-options {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {

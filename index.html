@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lickty-Split</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <script src="profile.js" defer></script>
 </head>
 <body>
@@ -38,13 +41,13 @@
       </div>
       <!-- Profile Info Section -->
       <div class="profile-info">
-        <h1>Shanaz Munni</h1>
+        <h1>Name</h1>
         <h3>Little notes here</h3>
         <p>About ME!!!</p>
       </div>
       <!-- Add Recipe Button -->
       <div class="profile-link">
-        <a href="add-recipe.html" class="add-recipe-btn">
+        <a href="addrecipe.html" class="add-recipe-btn">
           <ion-icon name="add-outline"></ion-icon>
           Add Recipe
         </a>
@@ -61,9 +64,22 @@
     <div class="expandable_content_wrapper">
       <div class="my_recipes_content">
         <p>Your own recipes here. </p>
+        <button class="scroll-btn left" onclick="scrollLeft()">&#60;</button>
+        <div class="recipes">
+          {% for recipe in recipes %}
+          <div class="recipe-card">
+            <a href="{% url 'recipe_detail' recipe.id %}">
+              <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" class="recipe-image">
+              <h3 class="recipe-name">{{ recipe.name }}</h3>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="scroll-btn right" onclick="scrollRight()">&#62;</button>
       </div>
     </div>
   </div>
+
   <!--Favorite Recipes-->
   <div class="expandable">
     <div class="expandable_title_bar">
@@ -71,7 +87,7 @@
       <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
     </div>
     <div class="expandable_content_wrapper">
-      <div class="my_recipes_content">
+      <div class="favorite_recipes_content">
         <p>Your favorite recipes here. </p>
       </div>
     </div>
@@ -84,7 +100,7 @@
       <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
     </div>
     <div class="expandable_content_wrapper">
-      <div class="my_recipes_content">
+      <div class="recent_recipes_content">
         <p>View your recently viewed recipes.</p>
       </div>
     </div>
@@ -97,7 +113,7 @@
       <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
     </div>
     <div class="expandable_content_wrapper">
-      <div class="my_recipes_content">
+      <div class="meal_plan_content">
         <p>Plan your meals for the week with our suggested recipes.</p>
       </div>
     </div>
@@ -110,12 +126,34 @@
       <ion-icon class="expandable_icon" name="chevron-back"></ion-icon>
     </div>
     <div class="expandable_content_wrapper">
-      <div class="my_recipes_content">
-        <p>Keep track of ingredients you need to buy.</p>
+      <div class="shopping_list_content">
+        <div class="sorting-options">
+          <label for="sort-options">Sort by:</label>
+          <select id="sort-options">
+            <option value="alphabetical">Alphabetical</option>
+            <option value="fruit">Fruit</option>
+            <option value="vegetable">Vegetable</option>
+            <option value="protein"> Protein</option>
+            <option value="Grain">Grain</option>
+            <option value="dairy">Dairy</option>
+            <option value="beverage">Beverage</option>
+            <option value="pantry_staple">Pantry Staple</option>
+            <option value="snack">Snack</option>
+            <option value="Frozen_food">Frozen Food</option>
+          </select>
+        </div>
+        <ul class="shopping_list" id="shopping-list">
+          <!-- List items will be dynamically added here -->
+        </ul>
+        <button class="add_item_button" id="add-item-button">+ Add Item</button>
       </div>
     </div>
   </div>
+
+
+
 </div>
+
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
