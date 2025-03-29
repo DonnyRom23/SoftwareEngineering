@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
     const recipeName = document.getElementById("recipe-name").value.trim();
-    const recipeImage = document.getElementById("recipe-image").value.trim();
+    const recipeImage = document.getElementById("recipe-image").files[0]; // Get the selected image
     const ingredients = document.getElementById("ingredients").value.trim();
     const instructions = document.getElementById("instructions").value.trim();
     const tags = document.getElementById("tags").value.trim();
@@ -24,25 +24,59 @@ document.addEventListener("DOMContentLoaded", function () {
     if (recipeName && ingredients && instructions) {
       let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
 
-      if (editRecipe) {
-        // Update existing recipe
-        recipes[editRecipe.index] = {
+      // If an image is selected, read it before proceeding
+      if (recipeImage) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          const recipeData = {
+            name: recipeName,
+            image: recipeImage ? e.target.result : 'images/default-food.png', // Use uploaded image or default
+            ingredients,
+            instructions,
+            tags
+          };
+
+          if (editRecipe) {
+            // Update existing recipe
+            recipes[editRecipe.index] = recipeData;
+            localStorage.removeItem("editRecipe"); // Clear edit flag
+          } else {
+            // Add new recipe
+            recipes.push(recipeData);
+          }
+
+          localStorage.setItem("recipes", JSON.stringify(recipes));
+          alert("Recipe saved successfully!");
+          window.location.href = "index.html"; // Redirect to the main page
+        };
+
+        reader.onerror = function () {
+          alert("There was an error reading the image file. Please try again.");
+        };
+
+        reader.readAsDataURL(recipeImage); // Convert image to base64 data URL
+      } else {
+        // If no image, save the recipe without an image
+        const recipeData = {
           name: recipeName,
-          image: recipeImage,
+          image: "",  // No image provided
           ingredients,
           instructions,
           tags
         };
-        localStorage.removeItem("editRecipe"); // Clear edit flag
-      } else {
-        // Add new recipe
-        recipes.push({ name: recipeName, image: recipeImage, ingredients, instructions, tags });
+
+        if (editRecipe) {
+          recipes[editRecipe.index] = recipeData;
+          localStorage.removeItem("editRecipe"); // Clear edit flag
+        } else {
+          recipes.push(recipeData);
+        }
+
+        localStorage.setItem("recipes", JSON.stringify(recipes));
+        alert("Recipe saved successfully!");
+        window.location.href = "index.html"; // Redirect to the main page
       }
-
-      localStorage.setItem("recipes", JSON.stringify(recipes));
-
-      alert("Recipe saved successfully!");
-      window.location.href = "index.html"; // Redirect to the main page
     } else {
       alert("Please fill out all fields.");
     }

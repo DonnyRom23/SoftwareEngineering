@@ -9,23 +9,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <script src="profile.js" defer></script>
+  <script src="myrecipe.js" defer></script>
+  <script src="shoppinglist.js" defer></script>
 </head>
 <body>
 
 <nav class="navbar">
-  <div class="navbar-left">
+  <div class="nav-left">
     <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
     <div class="search-box">
       <ion-icon name="search-outline"></ion-icon>
       <input type="text" placeholder="Search for anything">
     </div>
   </div>
-  <div class="navbar-right">
-    <div class="online">
-      <ion-icon name="person-outline"></ion-icon>
+  <div class="dropdown">
+    <button class="dropbtn">
+      <i class="fa fa-user"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="home.html">Home</a>
+      <a href="recipe.html">Recipe</a>
+      <a href="">Logout</a>
     </div>
   </div>
 </nav>
+
 
 
 <div class="container">
@@ -66,14 +74,8 @@
         <p>Your own recipes here. </p>
         <button class="scroll-btn left" onclick="scrollLeft()">&#60;</button>
         <div class="recipes">
-          {% for recipe in recipes %}
-          <div class="recipe-card">
-            <a href="{% url 'recipe_detail' recipe.id %}">
-              <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" class="recipe-image">
-              <h3 class="recipe-name">{{ recipe.name }}</h3>
-            </a>
-          </div>
-          {% endfor %}
+          <div id="recipe-list"></div>
+
         </div>
         <button class="scroll-btn right" onclick="scrollRight()">&#62;</button>
       </div>
