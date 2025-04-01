@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Cookbook</title>
+  <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+<div class="banner">
+  <div class="navbar">
+    <div class="logo">cookbook</div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="login.html">Log In</a></li>
+    </ul>
+  </div>
+
+  <div class="wrapper">
+    <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+
+    <!-- Register Form -->
+    <div class="form-box register">
+      <h2>Register</h2>
+      <form action="#">
+        <div class="input-box">
+          <span class="icon"><i class="fa-solid fa-user"></i></span>
+          <input type="text" required>
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" id="reg-email" name="email" required>
+          <label for="reg-email">Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" id="reg-password" name="password" required>
+          <label for="reg-password">Password</label>
+        </div>
+        <!-- Agree to Terms and Conditions -->
+        <div class="remember-forgot">
+          <label><input type="checkbox" id="terms-checkbox"> </label>
+          <a href="#" class="terms-link" id="open-terms">I agree to the terms & conditions</a>
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <div class="login-register">
+          <p>Already have an account? <a href="login.html" class="login-link">Login</a></p>
+        </div>
+      </form>
+    </div>
+    <!-- Modal for Terms and Conditions -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <div class="terms-modal" id="terms-modal">
+      <div class="modal-header">
+        <h2>Terms & Conditions</h2>
+        <button class="close-btn" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-content">
+        <p>By registering an account with our Lickedy Split App, you agree to the following terms and conditions ("Terms"):</p>
+        <h3>1. Acceptance of Terms</h3>
+        <p>By registering for an account, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, you may not register for or use the app.</p>
+
+        <h3>2. Eligibility</h3>
+        <p>You must be at least 13 years old to use the app. By registering, you confirm that you are at least 13 years of age or have the consent of a parent or guardian to use the app.</p>
+
+        <h3>3. Account Registration</h3>
+        <p>To use the app, you are required to create an account by providing accurate and complete information. You agree to keep your account information up to date and maintain the confidentiality of your login credentials. You are solely responsible for all activities that occur under your account.</p>
+
+        <h3>4. Use of the App</h3>
+        <p>The app provides features such as creating and managing recipes, storing ingredients, and suggesting dishes based on the ingredients you have. You agree to use the app solely for personal, non-commercial purposes and in compliance with applicable laws and regulations.</p>
+
+        <h3>5. User Content</h3>
+        <p>You may upload and share content (e.g., recipes, images, or comments) through the app. By doing so, you grant the app a non-exclusive, royalty-free, worldwide license to use, display, and distribute such content for the purposes of providing and improving the app.</p>
+
+        <h3>6. Privacy and Data Collection</h3>
+        <p>We respect your privacy. By using the app, you consent to our collection and use of data as outlined in the Privacy Policy.</p>
+
+        <h3>7. Prohibited Activities</h3>
+        <p>You agree not to use the app for any unlawful or prohibited activities, including but not limited to:
+        <ul>
+          <li>Violating the rights of others</li>
+          <li>Uploading harmful or offensive content</li>
+          <li>Using the app for spam or harassment</li>
+          <li>Attempting to access another user’s account without permission</li>
+        </ul>
+        </p>
+
+        <h3>8. Termination</h3>
+        <p>We reserve the right to suspend or terminate your account at any time for violating these Terms or for any other reason. You may also deactivate your account at any time through your settings.</p>
+
+        <h3>9. Disclaimers and Limitations of Liability</h3>
+        <p>The app is provided "as is" and we make no warranties regarding the app's availability, functionality, or accuracy. We are not liable for any damages arising from your use or inability to use the app.</p>
+
+        <h3>10. Changes to Terms</h3>
+        <p>We may update these Terms at any time. We will notify you of any significant changes by posting an updated version on the app or through other means. Your continued use of the app after such changes will constitute your acceptance of the revised Terms.</p>
+
+        <h3>11. Governing Law</h3>
+        <p>These Terms will be governed by the laws of Michigan, and any disputes arising from these Terms will be resolved in the courts located in Michigan.</p>
+
+        <h3>12. Contact Information</h3>
+        <p>If you have any questions or concerns about these Terms, please contact us at <a href="mailto:LickedySplit@gmail.com">LickedySplit@gmail.com</a>.</p>
+
+      </div>
+      <button class="agree-btn" onclick="acceptTerms()">I Agree</button>
+    </div>
+
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
