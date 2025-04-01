@@ -13,7 +13,9 @@
 <div class="wrapper">
     <div class="banner">
         <div class="navbar">
-            <div class="logo">Lickedy-Split</div>
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Lickedy Split">
+            </div>
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -36,6 +38,8 @@
         <button id="ingredientButton" class="button-value">Ingredients</button>
         <button id="cuisinesButton" class="button-value">Cuisines</button>
         <button id="mealTypeButton" class="button-value">Meal-Type</button>
+        <button id="dietaryButton" class="button-value">Dietary</button>
+        <button id="allergiesButton" class="button-value">Allergen</button>
     </div>
 
 
@@ -103,7 +107,7 @@
         <button class="cuisineBtn" id="Mexican">Mexican</button>
         <button class="cuisineBtn" id="Chinese">Chinese</button>
         <button class="cuisineBtn" id="turkish">Turkish</button>
-        <button class="cuisineBtn" id="Iraqi">Iraqi </button>
+        <button class="cuisineBtn" id="iraqi">Iraqi </button>
         <button class="cuisineBtn" id="Korean">Korean </button>
         <button class="cuisineBtn" id="caribbean">Caribbean</button>
         <button class="cuisineBtn" id="moroccan">Moroccan </button>
@@ -125,9 +129,46 @@
         <button class="category-btn" id="dessert">Dessert</button>
         <button class="category-btn" id="appetizer">Appetizer</button>
         <button class="category-btn" id="nightSnack">Late Night Snack</button>
-
-
     </div>
+
+
+    <!-- Dietary Preference -->
+    <div id="dietaryCategory" style="display: none;">
+        <button class="dietary-btn" id="vegetarian">Vegetarian</button>
+        <button class="dietary-btn" id="vegan">Vegan</button>
+        <button class="dietary-btn" id="halal">Halal</button>
+        <button class="dietary-btn" id="keto">Keto</button>
+        <button class="dietary-btn" id="kosher">Kosher</button>
+        <button class="dietary-btn" id="gluten-free">Gluten-Free</button>
+        <button class="dietary-btn" id="nutFree">Nut-Free</button>
+    </div>
+
+<!-- Allergies Category -->
+    <div id="allergiesCategory" style="display: none;">
+        <button class="allergies-btn" id="peanuts">Peanuts</button>
+        <button class="allergies-btn" id="treeNuts">Tree Nuts</button>
+        <button class="allergies-btn" id="milk">Milk (Dairy)</button>
+        <button class="allergies-btn" id="eggs">Eggs</button>
+        <button class="allergies-btn" id="wheat">Wheat (Gluten)</button>
+        <button class="allergies-btn" id="soy">Soy</button>
+        <button class="allergies-btn" id="fish">Fish</button>
+        <button class="allergies-btn" id="shellfish">Shellfish</button>
+        <button class="allergies-btn" id="sesame">Sesame</button>
+        <button class="allergies-btn" id="mustard">Mustard</button>
+        <button class="allergies-btn" id="celery">Celery</button>
+        <button class="allergies-btn" id="lupin">Lupin</button>
+        <button class="allergies-btn" id="sulphites">Sulphites/Sulfites</button>
+        <button class="allergies-btn" id="corn">Corn</button>
+        <button class="allergies-btn" id="barley">Barley (Gluten)</button>
+        <button class="allergies-btn" id="oats">Oats (sometimes gluten)</button>
+        <button class="allergies-btn" id="rice">Rice</button>
+        <button class="allergies-btn" id="carrots">Carrots</button>
+        <button class="allergies-btn" id="strawberries">Strawberries</button>
+        <button class="allergies-btn" id="tomatoes">Tomatoes</button>
+    </div>
+
+
+
 
     <!-- recipe holder -->
     <div class="recipes-container" id="recipesContainer">
@@ -155,6 +196,7 @@
 
           </ul>
       </div>-->
+  <div id="paginationControls"></div>
 
 
 

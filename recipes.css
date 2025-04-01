@@ -10,8 +10,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('pics/backgroundpic.jpg');
-
+    background-image: url('images/recipesBack.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -32,7 +31,6 @@ body::before {
     background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity here */
     z-index: -1; /* Ensures it’s behind all content */
 }
-
 
 /* Navbar Styling */
 .navbar {
@@ -83,10 +81,10 @@ body::before {
 /* Search Box */
 .searchBox {
     position: absolute;
-    top: 40%;
+    top: 25%; /* Controls the vertical position */
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: black;
+    background-color: white;
     height: 40px;
     border-radius: 40px;
     padding: 10px;
@@ -98,7 +96,7 @@ body::before {
     border: none;
     background: none;
     outline: none;
-    color: white;
+    color: black;
     font-size: 16px;
     width: 0;
     padding: 0;
@@ -109,11 +107,11 @@ body::before {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: black;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
     cursor: pointer;
     transition: background-color 0.4s ease-in-out;
 }
@@ -124,7 +122,7 @@ body::before {
 }
 
 .searchBox:hover > .searchButton {
-    background-color: black;
+    background-color: white;
 }
 
 /* Button Styling */
@@ -140,7 +138,7 @@ body::before {
     border: 2px solid black;
     padding: 1em 3em;
     border-radius: 30px;
-    background-color: dimgray;
+    background-color: white;
     color: black;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
@@ -164,6 +162,7 @@ body::before {
     height: auto;  /* Let the height grow depending on content */
     min-height: 150px;  /* Minimum height to ensure there's enough space */
 }
+
 /* Scrollbar itself */
 ::-webkit-scrollbar {
     width: 12px;  /* For vertical scrollbar */
@@ -180,8 +179,8 @@ body::before {
 }
 
 .category-btn {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     padding: 15px 30px;
     margin: 10px;
@@ -192,12 +191,13 @@ body::before {
 }
 
 .category-btn:hover {
-    background-color: #393535;
+    background-color: #685858;
 }
-.category-btn.active{
-    background-color: #393535;
-    color: white;
-    border: 2px solid #393535;
+
+.category-btn.active {
+    background-color:  #685858;
+    color: black;
+    border: 2px #685858;
 }
 
 /* Dropdown Styling */
@@ -211,6 +211,7 @@ body::before {
     cursor: pointer;
     font-size: 16px;
     text-align: left;
+    color: white;
 }
 
 .dropdown-content {
@@ -225,10 +226,11 @@ body::before {
     flex-wrap: wrap;
     justify-content: center;
     overflow-y: auto;
+
 }
 
 .ingredient-btn {
-    background-color: black;
+    background-color: white;
     border: none;
     padding: 8px 15px;
     margin: 5px;
@@ -236,7 +238,7 @@ body::before {
     cursor: pointer;
     font-size: 14px;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .dropdown:hover .dropdown-content {
@@ -250,7 +252,7 @@ body::before {
 
 /* Cuisine Buttons */
 .cuisineBtn {
-    background-color: black;
+    background-color: white;
     border: none;
     padding: 15px 30px;
     margin: 10px;
@@ -258,7 +260,7 @@ body::before {
     cursor: pointer;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    color: white;
+    color: black;
 }
 
 .cuisineBtn:hover {
@@ -318,6 +320,7 @@ body::before {
     color: white;
     border-color: #393535;
 }
+
 .pagination {
     display: flex;
     align-items: center;
@@ -334,6 +337,7 @@ ul {
     display: flex; /* Make ul a flex container */
     justify-content: center; /* Center the list items */
 }
+
 /* Default style for pagination items */
 #pag li {
     display: inline-block;
@@ -355,6 +359,7 @@ ul li.active {
     color: #fff !important;  /* White text for active state */
     background: linear-gradient(#ff4568, #ff4568);  /* Gradient for the background */
 }
+
 #pag ul li.active {
     color: #fff !important; /* Ensure text color is applied */
     background-color: red;
@@ -371,6 +376,7 @@ ul li.active {
     border: none;
     cursor: pointer;
 }
+
 #noRecipesMessage {
     color: white; /* Set the text color to white */
     background-color: rgba(0, 0, 0, 0.6); /* Optional: Set a background color to make the text stand out */
@@ -381,4 +387,145 @@ ul li.active {
     margin: 20px auto;
     width: 80%; /* Adjust width as needed */
     max-width: 500px; /* Adjust max width */
+}
+
+/* Dietary Section */
+.dietary-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.dietary-btn:hover {
+    background-color: #393535;
+}
+
+.dietary-btn.active {
+    background-color: #393535; /* Same background when active */
+    color: white;
+    border: 2px solid #393535; /* Same border when active */
+}
+
+/* Dropdown for dietary category */
+#dietaryCategory {
+    display: none;
+    background-color: rgba(115, 115, 115, 0.34);
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    overflow-y: auto;
+    height: auto;
+    min-height: 150px;
+}
+
+.dropdown-button.dietary-btn {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    margin: 10px 0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+}
+
+.dropdown-content.dietary-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #5a5a5a;
+    border-radius: 30px;
+    width: 100%;
+    max-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Allergies Section */
+.allergies-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.allergies-btn:hover {
+    background-color: #393535;
+}
+
+.allergies-btn.active {
+    background-color: #393535; /* Same background when active */
+    color: white;
+    border: 2px solid #393535; /* Same border when active */
+}
+
+/* Dropdown for allergies category */
+#allergiesCategory {
+    display: none;
+    background-color: rgba(115, 115, 115, 0.34);
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    overflow-y: auto;
+    height: auto;
+    min-height: 150px;
+}
+
+.dropdown-button.allergies-btn {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    margin: 10px 0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+}
+
+.dropdown-content.allergies-btn {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #5a5a5a;
+    border-radius: 30px;
+    width: 100%;
+    max-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.logo img {
+    width: 70%; /* Adjust size as needed */
+    height: 50%; /* Ensure height matches width for a perfect circle */
+    border-radius: 70%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits well inside the circle */
+    display: block; /* Prevents unwanted spacing */
+}
+.logo:hover img {
+    transform: scale(1.1); /* Zoom in effect */
 }

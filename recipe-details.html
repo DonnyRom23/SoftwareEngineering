@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="recipe-details.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div id="recipe-details-container">
+
+    <!-- Recipe Image -->
+    <div class="recipe-image-container">
+        <img id="image" />
+    </div>
+
+
+
+    <!-- Recipe Description -->
+    <article class="recipe-description-section">
+        <h2 id="recipe-name"></h2>
+        <p id="recipe-description"></p>
+    </article>
+
+    <!-- Time & Servings Section -->
+    <div class="recipe-info-container">
+        <div class="recipe-time">
+            <i class="fas fa-stopwatch"></i> <!-- Updated Icon -->
+            <h5>Time</h5>
+            <p><i class="fas fa-hourglass-start"></i> Prep: <span id="prepTime"></span></p>
+            <p><i class="fas fa-fire"></i> Cook: <span id="cook-time"></span></p>
+        </div>
+        <div class="recipe-serving">
+            <p><i class="fa-solid fa-user-friends"></i>
+            <h5>Servings</h5>
+            <p><span id="servings"></span></p>
+        </div>
+    </div>
+
+    <!-- Ingredients Section -->
+    <section id="recipe-ingredients-section">
+        <h3>Ingredients</h3>
+        <ul id="recipe-ingredients"></ul>
+    </section>
+
+    <!-- Steps Section -->
+    <section id="recipe-steps-section">
+        <h3>Steps</h3>
+        <ul id="recipe-steps"></ul>
+    </section>
+
+    <!-- Other Info -->
+    <section id="recipe-cuisines-section">
+        <h3><i class="fa-solid fa-globe"></i> Cuisines</h3>
+        <ul id="recipe-cuisines"></ul>
+    </section>
+
+    <section id="recipe-mealtype-section">
+        <h3><i class="fa-solid fa-bowl-food"></i> Meal Type</h3>
+        <ul id="recipe-mealtype"></ul>
+    </section>
+
+    <section id="recipe-dietary-section">
+        <h3><i class="fa-solid fa-leaf"></i> Dietary Information</h3>
+        <ul id="recipe-dietary"></ul>
+    </section>
+
+    <section id="recipe-allergen-section">
+        <h3><i class="fa-solid fa-triangle-exclamation"></i> Allergen Information</h3>
+        <ul id="recipe-allergen"></ul>
+    </section>
+
+</div>
+
+<script src="recipe-details.js"></script>
+<script src="recipes.js"></script>
+</body>
+</html>
